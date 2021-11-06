@@ -1,14 +1,13 @@
-drop database IF EXISTS Php1simple;
-CREATE DATABASE IF NOT EXISTS Php1simple;
+drop database IF EXISTS Mvc;
+CREATE DATABASE IF NOT EXISTS Mvc;
 
-use Php1simple;
+use Mvc;
 
 
-CREATE TABLE Messages
+CREATE TABLE Articles
 (
-  id_message INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-  name varchar(128) NOT NULL,
-  text TEXT NOT NULL,
-  dt_add timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  status TINYINT NOT NULL DEFAULT 0
+  id_article INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  title varchar(128) NOT NULL,
+  content TEXT NOT NULL,
+  dt_add timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
