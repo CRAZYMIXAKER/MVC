@@ -15,3 +15,10 @@ function articlesOne(int $id)
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->fetch();
 }
+
+function deleteArticlesOne($id)
+{
+	$sql = "DELETE FROM articles WHERE id_article = :id";
+	$query = dbQuery($sql, ['id' => $id]);
+	return $query->rowCount();
+}
