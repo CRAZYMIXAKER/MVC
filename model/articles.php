@@ -9,14 +9,14 @@ function arcticleAll(): array
 	return $query->fetchAll();
 }
 
-function articlesOne(int $id)
+function articlesOne(int $id): array
 {
 	$sql = "SELECT * FROM articles WHERE id_article = :id";
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->fetch();
 }
 
-function deleteArticlesOne(int $id)
+function deleteArticlesOne(int $id): int
 {
 	$sql = "DELETE FROM articles WHERE id_article = :id";
 	$query = dbQuery($sql, ['id' => $id]);

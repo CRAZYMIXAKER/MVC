@@ -1,15 +1,15 @@
 <?php
 
 include_once('model/articles.php');
+include_once('core/check.php');
+include_once('core/error.php');
 
-$strId = $_GET['id'] ?? '';
-$id = (int)$strId;
+$id = checkId($_GET['id'] ?? '');
 // include('views/article/v_delete.php');
 $deleteArticle = deleteArticlesOne($id);
 
-if ($deleteArticle == 1) {
+if ($deleteArticle === 1) {
 	header('Location:index.php?c=index');
 } else {
-	header('HTTP/1.1 404 Not Found');
-	include('views/errors/v_404.php');
+	error('views/errors/v_404.php');
 }
