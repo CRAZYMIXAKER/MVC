@@ -4,4 +4,4 @@
 	<input type="text" name="content" value="<?= $article['content'] ?>"></br></br>
 	<button>Add article</button>
 </form>
-<a href="index.php?c=index">Back</a>
+<a href="index.php?f=article&c=index">Back</a>

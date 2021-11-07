@@ -6,7 +6,7 @@ include_once('core/error.php');
 
 $id = checkId($_GET['id'] ?? '');
 // include('views/article/v_delete.php');
-$deleteArticle = deleteArticlesOne($id);
+$deleteArticle = articlesOneDelete($id);
 
 if ($deleteArticle === 1) {
 	header('Location:index.php?c=index');

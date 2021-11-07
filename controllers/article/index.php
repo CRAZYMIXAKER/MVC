@@ -2,6 +2,6 @@
 
 include_once('model/articles.php');
 
-$articles = arcticleAll();
+$articles = arcticlesGet();
 
 include('views/article/v_index.php');

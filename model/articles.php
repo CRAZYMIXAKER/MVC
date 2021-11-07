@@ -2,7 +2,7 @@
 
 include_once('core/db.php');
 
-function arcticleAll(): array
+function arcticlesGet(): array
 {
 	$sql = "SELECT * FROM articles ORDER BY dt_add";
 	$query = dbQuery($sql);
@@ -16,7 +16,7 @@ function articlesOne(int $id): array
 	return $query->fetch();
 }
 
-function deleteArticlesOne(int $id): int
+function articlesOneDelete(int $id): int
 {
 	$sql = "DELETE FROM articles WHERE id_article = :id";
 	$query = dbQuery($sql, ['id' => $id]);
