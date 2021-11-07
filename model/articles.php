@@ -16,16 +16,23 @@ function articlesOne(int $id)
 	return $query->fetch();
 }
 
-function deleteArticlesOne($id)
+function deleteArticlesOne(int $id)
 {
 	$sql = "DELETE FROM articles WHERE id_article = :id";
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->rowCount();
 }
 
-function articlesOneAdd($fields)
+function articlesOneAdd(array $fields)
 {
 	$sql = "INSERT articles (title, content) VALUES (:title, :content)";
 	$query = dbQuery($sql, $fields);
 	return $query;
+}
+
+function articlesOneEdit(array $fields)
+{
+	$sql = "UPDATE articles SET title = :title, content = :content WHERE id_article = :id_article";
+	$query = dbQuery($sql, $fields);
+	return $query->rowCount();
 }
