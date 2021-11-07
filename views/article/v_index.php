@@ -1,4 +1,5 @@
 <H1>indexArticle</H1>
+<a href="index.php?c=add">Add</a>
 <?php foreach ($articles as $article) :
 ?>
 	<div>

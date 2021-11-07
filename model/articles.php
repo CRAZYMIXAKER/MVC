@@ -22,3 +22,10 @@ function deleteArticlesOne($id)
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->rowCount();
 }
+
+function articlesOneAdd($fields)
+{
+	$sql = "INSERT articles (title, content) VALUES (:title, :content)";
+	$query = dbQuery($sql, $fields);
+	return $query;
+}
