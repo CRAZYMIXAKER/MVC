@@ -4,7 +4,11 @@
 	<em><?= $article['dt_add'] ?></em>
 	<div> <?= $article['content'] ?> </div>
 	<a href="index.php?f=article&c=index"> Back </a></br>
-	<a href="index.php?f=article&c=delete&id=<?= $article['id_article'] ?>"> Delete </a></br>
+	<a id="delete"> Delete </a></br>
 	<a href="index.php?f=article&c=edit&id=<?= $article['id_article'] ?>"> Edit </a>
 	<hr>
 </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="deleteAlert.js"></script>
