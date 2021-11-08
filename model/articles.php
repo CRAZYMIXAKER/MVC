@@ -16,14 +16,14 @@ function articlesOne(int $id)
 	return $query->fetch();
 }
 
-function articlesOneDelete(int $id): int
+function articleDelete(int $id): bool
 {
 	$sql = "DELETE FROM articles WHERE id_article = :id";
-	$query = dbQuery($sql, ['id' => $id]);
-	return $query->rowCount();
+	dbQuery($sql, ['id' => $id]);
+	return true;
 }
 
-function articlesOneAdd(array $fields)
+function articleAdd(array $fields)
 {
 	$sql = "INSERT articles (title, content) VALUES (:title, :content)";
 	$query = dbQuery($sql, $fields);
