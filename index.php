@@ -4,7 +4,7 @@ include_once('core/check.php');
 include_once('core/error.php');
 
 $fname = $_GET['f'];
-$cname = $_GET['c'] ?? 'index';
+$cname = $_GET['c'];
 $path = checkPath($fname, $cname);
 
 if ($path) {

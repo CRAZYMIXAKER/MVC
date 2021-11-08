@@ -1,22 +1,31 @@
 <?php
 
 include_once('model/articles.php');
+include_once('core/error.php');
+include_once('core/check.php');
 include_once('core/arr.php');
 
-$strId = $_GET['id'] ?? '';
-$id = (int) $strId;
+$id = checkId($_GET['id'] ?? '');
+$fields = articlesOne($id);
+$hasArticales = $article !== false;
 
-if ($id) {
-	$article = articlesOne($id);
+if ($hasArticales) {
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$articleEdit = extractFields($_POST, ['title', 'content']);
-		$articleEdit['id_article'] = "$id";
-		articlesOneEdit($articleEdit);
-		header('Location:index.php?c=index');
+		$fields = extractFields($_POST, ['title', 'content']);
+		$fields['id_article'] = "$id";
+		$articleValidate = articleValidate($fields);
+
+		if (empty($articleValidate)) {
+			$test = articleEdit($fields);
+			header('Location:index.php?f=article&c=index');
+			exit();
+		}
+	} else {
+		$articleValidate = [];
 	}
 } else {
-	header('HTTP/1.1 404 Not Found');
-	include('views/errors/v_404.php');
+	error('views/errors/v_404.php');
+	exit();
 }
 
 include('views/article/v_edit.php');

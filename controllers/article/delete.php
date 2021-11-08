@@ -9,7 +9,7 @@ $id = checkId($_GET['id'] ?? '');
 $deleteArticle = articlesOneDelete($id);
 
 if ($deleteArticle === 1) {
-	header('Location:index.php?c=index');
+	header('Location:index.php?f=article&c=index');
 } else {
 	error('views/errors/v_404.php');
 }
