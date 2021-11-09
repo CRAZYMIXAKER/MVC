@@ -14,4 +14,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$fields = ['title' => '', 'content' => ''];
 }
 
-include('views/article/v_add.php');
+$pageTitle = 'ArticleAdd';
+$pageContent = template('article/v_add', ['fields' => $fields, 'articleValidate' => $articleValidate]);

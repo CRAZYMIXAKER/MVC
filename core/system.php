@@ -13,7 +13,7 @@ function error($path)
 {
 	$protHttp = $_SERVER['SERVER_PROTOCOL'];
 	header("$protHttp 404 Not Found");
-	include("$path");
+	return template($path);
 }
 
 function checkId(string $id)
@@ -23,8 +23,8 @@ function checkId(string $id)
 	if ($resultId === 1) {
 		return $clearId;
 	} else {
-		error('views/errors/v_404.php');
-		exit();
+		error('errors/v_404');
+		// exit();
 	}
 }
 
@@ -34,10 +34,11 @@ function checkPath(string $foldersName, string $controllersName)
 		$path = "controllers/$foldersName/$controllersName.php";
 		if (file_exists($path)) {
 			return $path;
-		} else {
-			error('views/errors/v_404.php');
-			exit();
 		}
+		// else {
+		// 	error('errors/v_404');
+		// 	// exit();
+		// }
 	}
 }
 

@@ -4,8 +4,11 @@ $id = checkId($_GET['id'] ?? '');
 $article = articlesOne($id);
 $hasArticle = $article !== false;
 
+$pageTitle = 'Article';
+
 if ($hasArticle) {
-	include('views/article/v_article.php');
+	$pageContent = template('article/v_article', ['article' => $article]);
 } else {
-	error('views/errors/v_404.php');
+	$pageTitle = 'Error 404';
+	$pageContent = error('errors/v_404');
 }

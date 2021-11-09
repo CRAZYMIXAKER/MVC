@@ -1,5 +1,5 @@
 <?php
 
 $articles = arcticlesGet();
-
-include('views/article/v_index.php');
+$pageTitle = 'Articles';
+$pageContent = template('article/v_index', ['articles' => $articles]);

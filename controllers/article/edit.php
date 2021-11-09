@@ -19,8 +19,10 @@ if ($hasArticales) {
 		$articleValidate = [];
 	}
 } else {
-	error('views/errors/v_404.php');
+	$pageTitle = 'Error 404';
+	$pageContent = error('errors/v_404');
 	exit();
 }
 
-include('views/article/v_edit.php');
+$pageTitle = 'Edit';
+$pageContent = template('article/v_edit', ['fields' => $fields, 'articleValidate' => $articleValidate]);

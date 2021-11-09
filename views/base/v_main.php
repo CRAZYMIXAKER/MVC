@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-	<title>Index</title>
+	<title><?= $title ?></title>
 	<meta charset="UTF-8">
 	<!-- <link href="https://fonts.googleapis.com/css2?family=Yanone+Kaffeesatz:wght@400;700&display=swap" rel="stylesheet" />
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-	<h1>asdasd</h1>
+	<?= $content ?>
 </body>
 
 </html>
