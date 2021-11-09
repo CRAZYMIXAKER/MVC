@@ -1,7 +1,9 @@
 <h1>Article</h1>
 <div>
 	<strong><?= $article['title'] ?></strong>
+
 	<em><?= $article['dt_add'] ?></em>
+	<div><a href="index.php?f=article&c=category&id=<?= $article['id_category'] ?>"> <?= $article['name_category'] ?> </a></div>
 	<div> <?= $article['content'] ?> </div>
 	<a href="index.php?f=article&c=index"> Back </a></br>
 	<a id="delete"> Delete </a></br>

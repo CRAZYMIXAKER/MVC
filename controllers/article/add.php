@@ -1,7 +1,9 @@
 <?php
 
+$categories = categoriesGet();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-	$fields = extractFields($_POST, ['title', 'content']);
+	$fields = extractFields($_POST, ['id_category', 'title', 'content']);
 	$articleValidate = articleValidate($fields);
 
 	if (empty($articleValidate)) {
@@ -10,9 +12,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 		exit();
 	}
 } else {
-	$articleValidate = [];
 	$fields = ['title' => '', 'content' => ''];
+	$articleValidate = [];
 }
 
 $pageTitle = 'ArticleAdd';
-$pageContent = template('article/v_add', ['fields' => $fields, 'articleValidate' => $articleValidate]);
+$pageContent = template('article/v_add', [
+	'categories' => $categories,
+	'fields' => $fields,
+	'articleValidate' => $articleValidate
+]);

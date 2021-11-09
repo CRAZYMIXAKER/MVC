@@ -11,7 +11,8 @@ function arcticlesGet(): array
 
 function articlesOne(int $id)
 {
-	$sql = "SELECT * FROM articles WHERE id_article = :id";
+	// $sql = "SELECT * FROM articles WHERE id_article = :id";
+	$sql = "	SELECT * FROM articles JOIN categories ON articles.id_category = categories.id_category WHERE articles.id_article = :id";
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->fetch();
 }
@@ -25,7 +26,7 @@ function articleDelete(int $id): bool
 
 function articleAdd(array $fields)
 {
-	$sql = "INSERT articles (title, content) VALUES (:title, :content)";
+	$sql = "INSERT articles (id_category, title, content) VALUES (:id_category, :title, :content)";
 	$query = dbQuery($sql, $fields);
 	return $query;
 }
@@ -59,4 +60,18 @@ function articleValidate(array &$fields): array
 	$fields['content'] = htmlspecialchars($fields['content']);
 
 	return $errors;
+}
+
+function categoriesGet(): array
+{
+	$sql = "SELECT * FROM Categories ORDER BY id_category";
+	$query = dbQuery($sql);
+	return $query->fetchAll();
+}
+
+function articlesCategoryGet(int $id)
+{
+	$sql = "SELECT * FROM articles WHERE id_category = :id";
+	$query = dbQuery($sql, ['id' => $id]);
+	return $query->fetchAll();
 }

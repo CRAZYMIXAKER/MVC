@@ -1,6 +1,6 @@
-<H1>indexArticle</H1>
-<a href="index.php?f=article&c=add">Add</a>
-<?php foreach ($articles as $article) :?>
+<H1>ArticleCategory</H1>
+<a href="index.php?f=article&c=index">Index</a>
+<?php foreach ($articles as $article) : ?>
 	<div>
 		<strong><?= $article['title'] ?></strong>
 		<em><?= $article['dt_add'] ?></em>
