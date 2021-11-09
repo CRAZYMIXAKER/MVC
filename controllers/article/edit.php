@@ -1,12 +1,13 @@
 <?php
 
 $id = checkId($_GET['id'] ?? '');
+$categories = categoriesGet();
 $fields = articlesOne($id);
-$hasArticales = $article !== false;
+$hasArticales = $fields !== false;
 
 if ($hasArticales) {
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-		$fields = extractFields($_POST, ['title', 'content']);
+		$fields = extractFields($_POST, ['id_category', 'title', 'content']);
 		$fields['id_article'] = "$id";
 		$articleValidate = articleValidate($fields);
 
@@ -25,4 +26,8 @@ if ($hasArticales) {
 }
 
 $pageTitle = 'Edit';
-$pageContent = template('article/v_edit', ['fields' => $fields, 'articleValidate' => $articleValidate]);
+$pageContent = template('article/v_edit', [
+	'categories' => $categories,
+	'fields' => $fields,
+	'articleValidate' => $articleValidate
+]);

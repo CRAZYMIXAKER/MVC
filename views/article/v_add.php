@@ -17,5 +17,5 @@
 	</div>
 	<div class="error"><?= $articleValidate['general'] ?></div></br>
 	<button>Add article</button>
-</form>
+</form></br>
 <a href="index.php?f=article&c=index">Back</a>

@@ -12,7 +12,7 @@ function arcticlesGet(): array
 function articlesOne(int $id)
 {
 	// $sql = "SELECT * FROM articles WHERE id_article = :id";
-	$sql = "	SELECT * FROM articles JOIN categories ON articles.id_category = categories.id_category WHERE articles.id_article = :id";
+	$sql = "SELECT * FROM articles JOIN categories ON articles.id_category = categories.id_category WHERE articles.id_article = :id";
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->fetch();
 }
@@ -33,7 +33,7 @@ function articleAdd(array $fields)
 
 function articleEdit(array $fields)
 {
-	$sql = "UPDATE articles SET title = :title, content = :content WHERE id_article = :id_article";
+	$sql = "UPDATE articles SET id_category = :id_category, title = :title, content = :content WHERE id_article = :id_article";
 	$query = dbQuery($sql, $fields);
 	return $query->rowCount();
 }
@@ -74,4 +74,13 @@ function articlesCategoryGet(int $id)
 	$sql = "SELECT * FROM articles WHERE id_category = :id";
 	$query = dbQuery($sql, ['id' => $id]);
 	return $query->fetchAll();
+}
+
+
+function category(int $id)
+{
+
+	$sql = "SELECT name_category FROM categories where id_category = :id";
+	$query = dbQuery($sql, ['id' => $id]);
+	return $query->fetchColumn();
 }

@@ -1,5 +1,5 @@
-<H1>ArticleCategory</H1>
-<a href="index.php?f=article&c=index">Index</a>
+<H1><?= $name_category ?></H1>
+<a href="index.php?f=article&c=index">Index</a></br></br>
 <?php foreach ($articles as $article) : ?>
 	<div>
 		<strong><?= $article['title'] ?></strong>

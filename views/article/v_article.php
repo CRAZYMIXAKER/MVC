@@ -4,8 +4,8 @@
 
 	<em><?= $article['dt_add'] ?></em>
 	<div><a href="index.php?f=article&c=category&id=<?= $article['id_category'] ?>"> <?= $article['name_category'] ?> </a></div>
-	<div> <?= $article['content'] ?> </div>
-	<a href="index.php?f=article&c=index"> Back </a></br>
+	<div> <?= $article['content'] ?> </div></br>
+	<a href="index.php?f=article&c=index"> Index </a></br>
 	<a id="delete"> Delete </a></br>
 	<a href="index.php?f=article&c=edit&id=<?= $article['id_article'] ?>"> Edit </a>
 	<hr>
