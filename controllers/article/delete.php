@@ -1,9 +1,5 @@
 <?php
 
-include_once('model/articles.php');
-include_once('core/check.php');
-include_once('core/error.php');
-
 $id = checkId($_GET['id'] ?? '');
 
 if (articleDelete($id)) {

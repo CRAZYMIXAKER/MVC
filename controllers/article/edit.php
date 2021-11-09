@@ -1,10 +1,5 @@
 <?php
 
-include_once('model/articles.php');
-include_once('core/error.php');
-include_once('core/check.php');
-include_once('core/arr.php');
-
 $id = checkId($_GET['id'] ?? '');
 $fields = articlesOne($id);
 $hasArticales = $article !== false;

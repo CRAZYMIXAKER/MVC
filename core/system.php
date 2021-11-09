@@ -1,5 +1,20 @@
 <?php
-include_once('core/error.php');
+
+function template(string $path, array $vars = []): string
+{
+	$systemTemplateRenererIntoFullPath = "views/$path.php";
+	extract($vars);
+	ob_start();
+	include($systemTemplateRenererIntoFullPath);
+	return ob_get_clean();
+}
+
+function error($path)
+{
+	$protHttp = $_SERVER['SERVER_PROTOCOL'];
+	header("$protHttp 404 Not Found");
+	include("$path");
+}
 
 function checkId(string $id)
 {

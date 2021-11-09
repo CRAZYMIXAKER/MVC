@@ -1,8 +1,5 @@
 <?php
 
-include_once('model/articles.php');
-include_once('core/arr.php');
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$fields = extractFields($_POST, ['title', 'content']);
 	$articleValidate = articleValidate($fields);

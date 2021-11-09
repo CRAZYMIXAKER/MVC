@@ -8,7 +8,7 @@ function dbInstance(): PDO
 	);
 	static $db;
 	if ($db === null) {
-		$db = new PDO('mysql:host=localhost;dbname=Mvc', 'root', 'root', $options);
+		$db = new PDO('mysql:host=' . DB_HOST . ';dbname=' . DB_NAME, DB_LOGIN, DB_PASS, $options);
 		$db->exec('SET NAMES UTF8');
 	}
 	return $db;
