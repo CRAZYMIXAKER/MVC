@@ -1,6 +1,6 @@
 <?php
 
-$id = checkId($_GET['id'] ?? '');
+$id = checkId(URL_PARAMS[2] ?? '');
 $name_category = category($id);
 $articles = articlesCategoryGet($id);
 

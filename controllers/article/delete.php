@@ -1,9 +1,9 @@
 <?php
 
-$id = checkId($_GET['id'] ?? '');
+$id = checkId(URL_PARAMS[2] ?? '');
 
 if (articleDelete($id)) {
-	header('Location:index.php?f=article&c=index');
+	header('Location:' . BASE_URL . 'article/index');
 } else {
 	$pageTitle = 'Error 404';
 	$pageContent = error('errors/v_404');

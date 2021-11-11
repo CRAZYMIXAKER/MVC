@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 	if (empty($articleValidate)) {
 		articleAdd($fields);
-		header('Location:index.php?f=article&c=index');
+		header('Location:' . BASE_URL . 'article/index');
 		exit();
 	}
 } else {

@@ -51,3 +51,14 @@ function checkFilesName(string $name)
 {
 	return preg_match('/^[a-z]{1,35}$/', $name);
 }
+
+function parseUrl($url)
+{
+	$params = explode('/', $url);
+	$cnt = count($params);
+
+	if ($params[$cnt - 1] === '') {
+		unset($params[$cnt - 1]);
+	}
+	return $params;
+}

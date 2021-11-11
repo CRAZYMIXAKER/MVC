@@ -1,5 +1,7 @@
 <?php
 
+const BASE_URL = '/';
+
 const DB_HOST = 'localhost';
 const DB_NAME = 'Mvc';
 const DB_LOGIN = 'root';

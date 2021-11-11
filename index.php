@@ -2,8 +2,10 @@
 
 include_once('init.php');
 
-$fname = $_GET['f'] ?? 'article';
-$cname = $_GET['c'] ?? 'index';
+define('URL_PARAMS', parseUrl($_GET['querysystemurl'] ?? ''));
+
+$fname = URL_PARAMS[0] ?? 'article';
+$cname = URL_PARAMS[1] ?? 'index';
 $path = checkPath($fname, $cname);
 $pageTitle = 'Error 404';
 $pageContent = '';
@@ -20,3 +22,6 @@ $html = template('base/v_main', [
 ]);
 
 echo $html;
+
+
+var_dump(URL_PARAMS);
