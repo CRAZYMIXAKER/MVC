@@ -1,5 +1,5 @@
 <H1><?= $name_category ?></H1>
-<a href="<?= BASE_URL ?>article/index">Index</a></br></br>
+<a href="<?= BASE_URL ?>">Index</a></br></br>
 <?php foreach ($articles as $article) : ?>
 	<div>
 		<strong><?= $article['title'] ?></strong>

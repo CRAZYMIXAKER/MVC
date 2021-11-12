@@ -1,8 +1,8 @@
 <?php
 
-$id = checkId(URL_PARAMS[2] ?? '');
+$id = checkId(URL_PARAMS['id']);
 $categories = categoriesGet();
-$fields = articlesOne($id);
+$fields = articlesOne((int)$id);
 $hasArticales = $fields !== false;
 
 if ($hasArticales) {
@@ -13,7 +13,7 @@ if ($hasArticales) {
 
 		if (empty($articleValidate)) {
 			$test = articleEdit($fields);
-			header('Location:' . BASE_URL . 'article/index');
+			header('Location:' . BASE_URL);
 			exit();
 		}
 	} else {

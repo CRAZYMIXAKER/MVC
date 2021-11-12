@@ -17,12 +17,19 @@ return (function () {
 			'params' => ['id' => 1]
 		],
 		[
-			'test' => '/^article\/edit$/',
-			'controller' => 'article/edit'
+			'test' => "/^article\/edit\/($intGT0)$/",
+			'controller' => 'article/edit',
+			'params' => ['id' => 1]
 		],
 		[
-			'test' => '/^category$/',
-			'controller' => 'category'
+			'test' => "/^article\/delete\/($intGT0)$/",
+			'controller' => 'article/delete',
+			'params' => ['id' => 1]
+		],
+		[
+			'test' => "/^article\/category\/($intGT0)$/",
+			'controller' => 'article/category',
+			'params' => ['id' => 1]
 		]
 	];
 })();

@@ -22,4 +22,4 @@
 	<div class="error"><?= $articleValidate['general'] ?></div></br>
 	<button>Edit article</button>
 </form>
-<a href="<?= BASE_URL ?>article/index">Back</a>
+<a href="<?= BASE_URL ?>">Index</a>

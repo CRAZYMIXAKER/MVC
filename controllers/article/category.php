@@ -1,7 +1,7 @@
 <?php
 
-$id = checkId(URL_PARAMS[2] ?? '');
-$name_category = category($id);
+$id = checkId(URL_PARAMS['id']);
+$name_category = category((int)$id);
 $articles = articlesCategoryGet($id);
 
 $pageTitle = 'ArticleCategory';
