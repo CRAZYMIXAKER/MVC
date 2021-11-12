@@ -2,18 +2,20 @@
 
 include_once('init.php');
 
-define('URL_PARAMS', parseUrl($_GET['querysystemurl'] ?? ''));
+$routes = include('routes.php');
+$url = $_GET['querysystemurl'] ?? '';
+$routerRes = parseUrl($url, $routes);
+$cname = $routerRes['controller'];
+define('URL_PARAMS', $routerRes['params']);
 
-$fname = URL_PARAMS[0] ?? 'article';
-$cname = URL_PARAMS[1] ?? 'index';
-$path = checkPath($fname, $cname);
+$path = "controllers/$cname.php";
 $pageTitle = 'Error 404';
 $pageContent = '';
 
-if ($path) {
+if (file_exists($path)) {
 	include_once($path);
 } else {
-	$pageContent = error('errors/v_404');
+	exit('Programmer...'); //fatal error
 }
 
 $html = template('base/v_main', [
@@ -24,4 +26,4 @@ $html = template('base/v_main', [
 echo $html;
 
 
-var_dump(URL_PARAMS);
+// var_dump(URL_PARAMS);

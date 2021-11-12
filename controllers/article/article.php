@@ -1,7 +1,7 @@
 <?php
 
-$id = checkId(URL_PARAMS[2] ?? '');
-$article = articlesOne($id);
+$id = checkId(URL_PARAMS['id']);
+$article = articlesOne((int)$id);
 $hasArticle = $article !== false;
 
 $pageTitle = 'Article';
