@@ -5,7 +5,7 @@
 	<em><?= $article['dt_add'] ?></em>
 	<div><a href="<?= BASE_URL ?>article/category/<?= $article['id_category'] ?>"> <?= $article['name_category'] ?> </a></div>
 	<div> <?= $article['content'] ?> </div></br>
-	<a href="<?= BASE_URL ?>article/index"> Index </a></br>
+	<a href="<?= BASE_URL ?>"> Index </a></br>
 	<a id="delete"> Delete </a></br>
 	<a href="<?= BASE_URL ?>article/edit/<?= $article['id_article'] ?>"> Edit </a>
 	<hr>

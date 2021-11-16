@@ -10,6 +10,6 @@ Options -Indexes
 	Deny from all
 </FilesMatch>
 
-<FilesMatch "index.(php)$">
+<FilesMatch "^index.(php)$">
 	Allow from all
 </FilesMatch>

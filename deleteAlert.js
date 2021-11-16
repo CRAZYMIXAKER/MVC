@@ -2,7 +2,7 @@ let params = new URL(document.location).searchParams;
 var deleteLink = document.getElementById("delete");
 
 deleteLink.addEventListener("click", function () {
-  if (params.get("")) {
+  if (params.get("querysystemurl")) {
     swal({
       text: "Вы уверены, что хотите удалить эту статью?",
       icon: "warning",

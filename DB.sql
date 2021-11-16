@@ -20,6 +20,24 @@ CREATE TABLE Articles
   FOREIGN KEY (id_category) REFERENCES Categories (id_category)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+CREATE TABLE Users
+(
+  id_user INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  login varchar(128) NOT NULL UNIQUE,
+  password varchar(256) NOT NULL,
+	email varchar(256) NOT NULL,
+  name varchar(128) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+CREATE TABLE Sessions
+(
+  id_session INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  id_user INT NOT NULL,
+	token varchar(128) NOT NULL UNIQUE,
+  dt_add timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+
 
 INSERT Categories
 (name_category)
