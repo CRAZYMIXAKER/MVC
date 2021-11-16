@@ -49,7 +49,5 @@ function parseUrl(string $url, array $routes): array
 			break;
 		}
 	}
-	//find route, parse params
-
 	return $res;
 }

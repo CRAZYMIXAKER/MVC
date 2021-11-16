@@ -23,3 +23,4 @@
 		</div>
 	<? endif; ?>
 </form>
+<a href="<?= BASE_URL ?>auth/reg">Registration</a>

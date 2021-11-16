@@ -3,7 +3,7 @@
 session_start();
 include_once('init.php');
 
-$user - authGetUser();
+$user = authGetUser();
 
 $uri = $_SERVER['REQUEST_URI'];
 $badUrl = BASE_URL . 'index.php';
@@ -12,6 +12,7 @@ if (strpos($uri, $badUrl) === 0) {
 } else {
 	$routes = include('routes.php');
 	$url = $_GET['querysystemurl'] ?? '';
+	// $url = $user === null ? 'auth/reg' : ($_GET['querysystemurl'] ?? '');
 
 	$routerRes = parseUrl($url, $routes);
 	$cname = $routerRes['controller'];
@@ -33,3 +34,11 @@ $html = template('base/v_main', [
 ]);
 
 echo $html;
+// echo 'USER: </br>';
+// var_dump($user);
+// echo '</br>';
+// echo '$_SESSION:</br>';
+// var_dump($_SESSION);
+// echo '</br>';
+// echo '3</br>';
+// var_dump($user);
