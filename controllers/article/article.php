@@ -7,7 +7,7 @@ $hasArticle = $article !== false;
 $pageTitle = 'Article';
 
 if ($hasArticle) {
-	$pageContent = template('article/v_article', ['article' => $article]);
+	$pageContent = template('article/v_article', ['user' => $user, 'article' => $article]);
 } else {
 	$pageTitle = 'Error 404';
 	$pageContent = error('errors/v_404');

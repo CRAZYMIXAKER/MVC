@@ -29,8 +29,8 @@ return (function () {
 			'params' => ['id' => 1]
 		],
 		[
-			'test' => "/^article\/category\/($intGT0)\/?$/",
-			'controller' => 'article/category',
+			'test' => "/^category\/categoryOne\/($intGT0)\/?$/",
+			'controller' => 'category/categoryOne',
 			'params' => ['id' => 1]
 		],
 		[

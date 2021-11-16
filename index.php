@@ -34,8 +34,8 @@ $html = template('base/v_main', [
 ]);
 
 echo $html;
-// echo 'USER: </br>';
-// var_dump($user);
+echo 'USER: </br>';
+var_dump($user);
 // echo '</br>';
 // echo '$_SESSION:</br>';
 // var_dump($_SESSION);
