@@ -26,7 +26,7 @@ function articleDelete(int $id): bool
 
 function articleAdd(array $fields)
 {
-	$sql = "INSERT articles (id_category, title, content) VALUES (:id_category, :title, :content)";
+	$sql = "INSERT articles (id_category, id_user, title, content) VALUES (:id_category, :id_user, :title, :content)";
 	$query = dbQuery($sql, $fields);
 	return $query;
 }

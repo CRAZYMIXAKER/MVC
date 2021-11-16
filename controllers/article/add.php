@@ -7,7 +7,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 	$articleValidate = articleValidate($fields);
 
 	if (empty($articleValidate)) {
+		$fields['id_user'] = $user['id_user'];
 		articleAdd($fields);
+		$_SESSION['articleAdded'] = true;
 		header('Location:' . BASE_URL);
 		exit();
 	}
