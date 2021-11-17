@@ -1,8 +1,8 @@
-let params = new URL(document.location).searchParams;
+// let params = new URL(document.location).searchParams;
 var deleteLink = document.getElementById("delete");
 
 deleteLink.addEventListener("click", function () {
-  if (params.get("querysystemurl")) {
+  if (id) {
     swal({
       text: "Вы уверены, что хотите удалить эту статью?",
       icon: "warning",
@@ -13,14 +13,14 @@ deleteLink.addEventListener("click", function () {
         swal("Вы успешно удалили статью", {
           icon: "success",
         }).then(() => {
-          window.location = "/article/delete/" + params.get("id");
+          window.location = "/article/delete/" + id;
         });
       } else {
         swal("Вы отменили удаление статьи").then((willDelete) => {
           if (willDelete) {
-            window.location = "article/article/" + params.get("id");
+            window.location = "/article/article/" + id;
           } else {
-            window.location = "article/article/" + params.get("id");
+            window.location = "/article/article/" + id;
           }
         });
       }

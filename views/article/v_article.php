@@ -7,12 +7,8 @@
 	<div> <?= $article['content'] ?> </div></br>
 	<a href="<?= BASE_URL ?>"> Index </a></br>
 	<?php if ($user['id_user'] === $article['id_user'] || $user['id_user'] === '1') : ?>
-		<a id="delete"> Delete </a></br>
+		<a href="<?= BASE_URL ?>article/delete/<?= $article['id_article'] ?>"> Delete </a></br>
 		<a href="<?= BASE_URL ?>article/edit/<?= $article['id_article'] ?>"> Edit </a>
 	<? endif; ?>
 	<hr>
 </div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="deleteAlert.js"></script>

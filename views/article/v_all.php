@@ -2,12 +2,18 @@
 <? if ($articleAdded) : ?>
 	<div class="articleAdd">You added article</div>
 <? endif; ?>
+<? if ($articleDeleted) : ?>
+	<div class="articleDelete">You deleted article</div>
+<? endif; ?>
 <? if ($user === null) : ?>
 	<a href="<?= BASE_URL ?>auth/login"> login </a></br>
 <? else : ?>
 	<a href="<?= BASE_URL ?>auth/logout"> logout </a> <label><?= $user['name'] ?></label></br>
 <? endif; ?>
-<a href="<?= BASE_URL ?>article/add">Add</a></br></br>
+<a href="<?= BASE_URL ?>article/add">Add</a></br>
+<? if ($user['id_user'] === '1') : ?>
+	<a href="<?= BASE_URL ?>users/users"> Users </a></br></br>
+<? endif; ?>
 <? foreach ($articles as $article) : ?>
 	<div>
 		<strong><?= $article['title'] ?></strong>

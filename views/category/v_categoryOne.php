@@ -1,4 +1,4 @@
-<H1><?= $name_category ?></H1>
+<H1><?= $articles[0]['name_category'] ?></H1>
 <a href="<?= BASE_URL ?>">Index</a></br></br>
 <?php foreach ($articles as $article) : ?>
 	<div>
