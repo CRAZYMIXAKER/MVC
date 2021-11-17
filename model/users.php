@@ -57,3 +57,10 @@ function userDelete(int $id): bool
 	dbQuery($sql, ['id' => $id]);
 	return true;
 }
+
+function userEdit(array $fields)
+{
+	$sql = "UPDATE users SET id_access = :id_access, login = :login, email = :email, name = :name WHERE id_user = :id_user";
+	$query = dbQuery($sql, $fields);
+	return $query->rowCount();
+}

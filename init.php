@@ -16,4 +16,5 @@ include_once('core/db.php');
 include_once('model/articles.php');
 include_once('model/category.php');
 include_once('model/sessions.php');
+include_once('model/access.php');
 include_once('model/users.php');

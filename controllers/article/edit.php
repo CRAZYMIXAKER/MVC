@@ -12,7 +12,7 @@ if ($hasArticales) {
 		$articleValidate = articleValidate($fields);
 
 		if (empty($articleValidate)) {
-			$test = articleEdit($fields);
+			articleEdit($fields);
 			header('Location:' . BASE_URL);
 			exit();
 		}

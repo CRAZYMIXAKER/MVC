@@ -54,5 +54,10 @@ return (function () {
 			'controller' => 'users/delete',
 			'params' => ['id' => 1]
 		],
+		[
+			'test' => "/^users\/edit\/($intGT0)\/?$/",
+			'controller' => 'users/edit',
+			'params' => ['id' => 1]
+		],
 	];
 })();
