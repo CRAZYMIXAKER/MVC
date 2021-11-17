@@ -45,5 +45,14 @@ return (function () {
 			'test' => "/^auth\/reg\/?$/",
 			'controller' => 'auth/reg'
 		],
+		[
+			'test' => "/^users\/all\/?$/",
+			'controller' => 'users/all'
+		],
+		[
+			'test' => "/^users\/delete\/($intGT0)\/?$/",
+			'controller' => 'users/delete',
+			'params' => ['id' => 1]
+		],
 	];
 })();

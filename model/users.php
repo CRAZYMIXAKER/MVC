@@ -40,8 +40,20 @@ function registrationValidate(array &$fields): array
 	foreach ($fields as $key => $item) {
 		$fields[$key] = htmlspecialchars($fields[$key]);
 	}
-	// $fields['title'] = htmlspecialchars($fields['title']);
-	// $fields['content'] = htmlspecialchars($fields['content']);
 
 	return $errors;
+}
+
+function usersAll(): array
+{
+	$sql = "SELECT * FROM users ORDER BY id_user";
+	$query = dbQuery($sql);
+	return $query->fetchAll();
+}
+
+function userDelete(int $id): bool
+{
+	$sql = "DELETE FROM users WHERE id_user = :id";
+	dbQuery($sql, ['id' => $id]);
+	return true;
 }
