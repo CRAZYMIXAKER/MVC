@@ -2,7 +2,7 @@
 
 function userById(string $id_user): ?array
 {
-	$sql = "SELECT id_user, login, email, name FROM users WHERE id_user=:id_user";
+	$sql = "SELECT id_user, id_access, login, email, name FROM users WHERE id_user=:id_user";
 	$query = dbQuery($sql, ['id_user' => $id_user]);
 	$user = $query->fetch();
 	return $user === false ? null : $user;

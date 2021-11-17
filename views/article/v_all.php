@@ -15,7 +15,7 @@
 	<a href="<?= BASE_URL ?>article/add">Add</a></br>
 <? endif; ?>
 
-<? if ($user['id_user'] === '1') : ?>
+<? if ($user['id_access'] === '1') : ?>
 	<a href="<?= BASE_URL ?>users/all"> Users </a></br></br>
 <? endif; ?>
 

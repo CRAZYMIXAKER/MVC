@@ -3,14 +3,22 @@ CREATE DATABASE IF NOT EXISTS Mvc;
 
 use Mvc;
 
+CREATE TABLE Access
+(
+	id_access INT(2) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	name_access varchar(35) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 CREATE TABLE Users
 (
   id_user INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+	id_access INT(2) NOT NULL DEFAULT 3,
   login varchar(128) NOT NULL UNIQUE,
   password varchar(256) NOT NULL,
 	email varchar(256) NOT NULL,
   name varchar(128) NOT NULL,
-	status INT NOT NULL DEFAULT 0
+
+	FOREIGN KEY (id_access) REFERENCES Access (id_access) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 CREATE TABLE Sessions
@@ -42,7 +50,19 @@ CREATE TABLE Articles
 	FOREIGN KEY (id_user) REFERENCES Users (id_user) ON DELETE CASCADE
 )ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+INSERT Access
+(name_access)
+VALUES
+('Admin'),
+('Manager'),
+('User');
 
+INSERT Users
+(id_access, login, password, email, name)
+VALUES
+(1, 'Admin', '$2y$10$BznxptfdcgqpUHkSDCMXwe0t9b2LMw8Hcbq9Y/pPGs/MGjg/zqtsm', 'admin@gmail.com', 'Mikal'),
+(2, 'Manager', '$2y$10$BznxptfdcgqpUHkSDCMXwe0t9b2LMw8Hcbq9Y/pPGs/MGjg/zqtsm', 'manager@gmail.com', 'Lena'),
+(3, 'User', '$2y$10$BznxptfdcgqpUHkSDCMXwe0t9b2LMw8Hcbq9Y/pPGs/MGjg/zqtsm', 'user@gmail.com', 'Jery');
 
 INSERT Categories
 (name_category)
@@ -50,13 +70,6 @@ VALUES
 ('Animal'),
 ('Sport'),
 ('Food');
-
-INSERT Users
-(login, password, email, name)
-VALUES
-('Admin', '$2y$10$BznxptfdcgqpUHkSDCMXwe0t9b2LMw8Hcbq9Y/pPGs/MGjg/zqtsm', 'admin@gmail.com', 'Mikal'),
-('Manager', '$2y$10$BznxptfdcgqpUHkSDCMXwe0t9b2LMw8Hcbq9Y/pPGs/MGjg/zqtsm', 'manager@gmail.com', 'Lena'),
-('User', '$2y$10$BznxptfdcgqpUHkSDCMXwe0t9b2LMw8Hcbq9Y/pPGs/MGjg/zqtsm', 'user@gmail.com', 'Jery');
 
 INSERT Articles
 (id_category, id_user, title, content)
