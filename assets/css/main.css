@@ -223,6 +223,10 @@ ul>li {
   color: var(--black);
 }
 
+.article__name:hover {
+  color: royalblue;
+}
+
 .article__date {
   color: var(--blue);
 }
