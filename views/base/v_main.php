@@ -16,16 +16,20 @@
 	<div class="wrapper">
 		<div class="hero">
 			<header class="header">
-				<a href="<?= BASE_URL ?>" class="header__logo">
-					<img src="/assets/img/icon.png" alt="logo" class="header__img" />
-				</a>
-				<div class="header__title"><?= $title ?></div>
+				<div class="header__logo">
+					<a href="<?= BASE_URL ?>" class="header__link">
+						<img src="/assets/img/icon.png" alt="logo" class="header__img" />
+					</a>
+					<div class="header__title">Site name</div>
+				</div>
 				<nav class="navigation">
 					<ul class="navigation__list">
 						<? if ($user['id_access'] === '1') : ?>
-							<li class="navigation__item">
-								<a href="<?= BASE_URL ?>users/all" class="navigation__link"> Users </a>
-							</li>
+							<? if ($title !== "Users") : ?>
+								<li class="navigation__item">
+									<a href="<?= BASE_URL ?>users/all" class="navigation__link"> Users </a>
+								</li>
+							<? endif; ?>
 						<? endif; ?>
 
 						<? if ($user === null) : ?>
@@ -33,9 +37,11 @@
 								<a href="<?= BASE_URL ?>auth/login" class="navigation__link">Login</a>
 							</li>
 						<? else : ?>
-							<li class="navigation__item">
-								<a href="<?= BASE_URL ?>article/add" class="navigation__link">Add</a>
-							</li>
+							<? if ($title !== "ArticleAdd") : ?>
+								<li class="navigation__item">
+									<a href="<?= BASE_URL ?>article/add" class="navigation__link">Add</a>
+								</li>
+							<? endif; ?>
 							<li class="navigation__item">
 								<a href="<?= BASE_URL ?>auth/logout" class="navigation__link"> logout </a>
 								<a href="#" class="navigation__user"> <?= $user['name'] ?> </a>

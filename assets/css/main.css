@@ -21,6 +21,8 @@
   /*fffefe*/
   --green: #59ff2f;
 
+  /* color: rgb(0, 255, 200); */
+
   --titlesFont: 'Yanone Kaffeesatz', Arial, sans-serif;
 }
 
@@ -31,7 +33,7 @@ body {
 
 body {
   color: var(--black);
-  background: url('/assets/img/bg.jpg') center center / 250px;
+  background: url('/assets/img/bg1.jpg') center center / 250px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -64,18 +66,22 @@ ul>li {
 }
 
 .header {
-  background-color: aquamarine;
   margin: 20px 0;
   min-width: 1920px;
-  /* width: 1920px; */
   display: flex;
-  /* padding: 50px; */
   justify-content: space-between;
   align-items: center;
+  font-size: 20px;
 }
 
 .header__logo {
+  display: flex;
+  align-items: center;
   margin-left: 150px;
+}
+
+.header__link {
+  margin-right: 20px;
 }
 
 .header__img {
@@ -84,6 +90,7 @@ ul>li {
 }
 
 .header__title {
+  color: var(--red);
   font-size: 35px;
 }
 
@@ -119,15 +126,17 @@ ul>li {
 }
 
 .navigation__link {
-  color: yellow;
+  color: rgb(0, 255, 200);
 }
 
-.navigation__user {}
+.navigation__user {
+  color: var(--red);
+}
 
 .main {
+  background-color: rgb(218, 218, 218, 0.9);
   margin-top: 10px;
   width: 1100px;
-  background-color: var(--gray);
 }
 
 .main__body {
@@ -155,30 +164,58 @@ ul>li {
   background-color: rgb(180, 245, 155);
 }
 
-/*
-.hero:nth-child(1) {
-  align-items: center;
-}
+.page {}
 
-.header {
-  width: 1920px;
-  display: flex;
-  align-items: center;
-  padding-top: 27px;
+.page__title {
+  color: var(--blue);
+  font-size: 25px;
   margin-bottom: 20px;
-  justify-content: space-between;
 }
 
-.header__logo {
+/*v_allArticle*/
+
+.article {
+  position: relative;
+  max-width: 500px;
+  margin-bottom: 20px;
+}
+
+.article::after {
+  position: absolute;
+  content: "";
+  bottom: -5px;
+  left: -15px;
+  width: 530px;
+  height: 1px;
+  background: var(--red);
+}
+
+.article__title {
+  font-size: 20px;
+  color: var(--black);
   display: flex;
-  margin-left: 149px;
+  justify-content: space-between;
+  margin-bottom: 5px;
 }
 
-.header__logo-pic {
-  width: 125px;
-  height: 125px;
+.article__name {
+  color: var(--black);
 }
 
+.article__date {
+  color: var(--blue);
+}
+
+.article__content {
+  font-style: italic;
+  font-size: 15px;
+  word-wrap: break-word;
+  /* overflow: hidden;
+	text-overflow: ellipsis; */
+}
+
+
+/*
 .footer {
   background: var(--black);
 	width: max-content;

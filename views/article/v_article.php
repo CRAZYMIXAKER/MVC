@@ -1,4 +1,5 @@
 <div>
+	<div class="">Статья</div>
 	<strong><?= $article['title'] ?></strong>
 
 	<em><?= $article['dt_add'] ?></em>
