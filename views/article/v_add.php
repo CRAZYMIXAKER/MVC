@@ -32,7 +32,4 @@
 		<button class="form__button">Добавить статью</button>
 	</form>
 
-
-
-
 </div>
