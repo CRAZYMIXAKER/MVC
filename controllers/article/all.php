@@ -15,7 +15,6 @@ if (isset($_SESSION['articleDeleted'])) {
 
 $pageTitle = 'Articles';
 $pageContent = template('article/v_all', [
-	'user' => $user,
 	'articles' => $articles,
 	'articleAdded' => $articleAdded,
 	'articleDeleted' => $articleDeleted

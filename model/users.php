@@ -33,6 +33,10 @@ function registrationValidate(array &$fields): array
 		}
 	}
 
+	if (usersOne($fields['login']) !== null) {
+		$errors['login'] = 'Этот логин уже занят, выберите пожалуйста другой';
+	}
+
 	if ($fields['password'] != $fields['passwordConfirm']) {
 		$errors['passwordConfirm'] = 'Пароли должны совпадать';
 	}

@@ -1,4 +1,3 @@
-<h1>Edit</h1>
 <form class="form" method="POST">
 	<div class="form__item">
 		<select name="id_category">
@@ -22,4 +21,3 @@
 	<div class="error"><?= $articleValidate['general'] ?></div></br>
 	<button>Edit article</button>
 </form>
-<a href="<?= BASE_URL ?>">Index</a>

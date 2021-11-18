@@ -30,7 +30,8 @@ include_once($path);
 
 $html = template('base/v_main', [
 	'title' => $pageTitle,
-	'content' => $pageContent
+	'content' => $pageContent,
+	'user' => $user
 ]);
 
 echo $html;
