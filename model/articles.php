@@ -44,6 +44,10 @@ function articleValidate(array &$fields): array
 	$titleLen = mb_strlen($fields['title'], 'UTF-8');
 	$contentLen = mb_strlen($fields['content'], 'UTF-8');
 
+	if ($fields['id_category'] === '') {
+		$errors['category'] = 'Выберите категорию';
+	}
+
 	if ($titleLen < 2 || $titleLen > 35) {
 		$errors['title'] = 'Заголовок, должен быть от 2 до 35 символов';
 	}
