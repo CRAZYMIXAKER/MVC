@@ -18,7 +18,7 @@
 			<header class="header">
 				<div class="header__logo">
 					<a href="<?= BASE_URL ?>" class="header__link">
-						<img src="/assets/img/icon.png" alt="logo" class="header__img" />
+						<img src="<?= BASE_URL ?>assets/img/icon.png" alt="logo" class="header__img" />
 					</a>
 					<div class="header__title">Site name</div>
 				</div>
@@ -55,17 +55,12 @@
 					<?= $content ?>
 				</div>
 			</div>
+
 			<footer class="footer">
-				<div class="footer__main">
-					<div class="footer__information">
-						<div class="footer__community">
-							<a class="footer__logo">
-								<img class="footer__logo-icon" src="/assets/img/icon.png" />
-							</a>
-						</div>
-					</div>
-					@Mixaker
+				<div class="footer__logo">
+					<img class="footer__img" src="<?= BASE_URL ?>assets/img/icon.png" />
 				</div>
+				<div class="footer__text"> Какой-то текст </div>
 			</footer>
 		</div>
 	</div>
