@@ -42,4 +42,3 @@
 		<? endforeach; ?>
 	</tbody>
 </table>
-<a href="<?= BASE_URL ?>">Index</a>

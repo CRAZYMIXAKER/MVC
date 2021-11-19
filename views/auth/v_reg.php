@@ -28,3 +28,10 @@
 	<button>Registration</button>
 </form></br>
 <a href="<?= BASE_URL ?>">Index</a>
+
+
+<!-- 
+<div class="question">
+		<div class="question__text">Уже зарегистрированы?</div>
+		<a class="question__link">Войти</a>
+	</div> -->

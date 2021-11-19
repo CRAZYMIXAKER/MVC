@@ -1,26 +1,34 @@
-<h1>Login</h1>
-<form method="POST">
-	<div>
-		<label for="auth-login">Login</label>
-		<input type="text" id="auth-login" name="login">
-	</div>
-	<div>
-		<label for="auth-password">Password</label>
-		<input type="password" id="auth-password" name="password">
-	</div>
-	<div>
-		<input type="checkbox" id="login-remember" name="remember">
-		<label for="login-remember">
-			Remember auth to 1 month
-		</label>
-	</div>
-	<hr>
-	<button>Auth now</button>
-	<? if ($authErr) : ?>
-		<hr>
-		<div>
-			Incorrect auth data
+<div class="page">
+	<div class="page__title">Авторизация</div>
+
+	<form class="form" method="POST">
+		<div class="form__item">
+			<input class="form__input" type="text" name="login" required />
+			<span class="form__span"></span>
+			<label class="form__label">Логин</label>
 		</div>
-	<? endif; ?>
-</form>
-<a href="<?= BASE_URL ?>auth/reg">Registration</a>
+		<div class="form__item">
+			<input class="form__input" type="password" name="password" required />
+			<span class="form__span"></span>
+			<label class="form__label">Пароль</label>
+		</div>
+
+		<div class="form__item">
+			<div class="checkbox">
+				<input class="checkbox__input" id="checkbox" type="checkbox" name="remember">
+				<label class="checkbox__label" for="checkbox"> Запомнить меня на 30 дней</label>
+			</div>
+		</div>
+
+		<button class="form__button">Авторизоваться</button>
+
+		<? if ($authErr) : ?>
+			<div class="error"> Incorrect auth data </div>
+		<? endif; ?>
+	</form>
+
+	<div class="question">
+		<div class="question__text">У вас нет аккаунта?</div>
+		<a class="question__link" href="<?= BASE_URL ?>auth/reg">Зарегистрироваться</a>
+	</div>
+</div>
