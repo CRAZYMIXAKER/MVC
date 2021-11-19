@@ -347,7 +347,9 @@ ul>li {
   background-color: #e9ecef;
 }
 
-.checkbox__label {}
+.checkbox__label {
+  color: var(--brown);
+}
 
 .question {
   display: flex;
